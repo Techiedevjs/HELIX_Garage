@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(15px, 1vw, 2vw);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+/* OUTLINE */
+.outline {
+  position: absolute;
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 20px;
+  z-index: 2;
+  display: flex;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.outline>span:first-child {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  right: 0;
+  top: 0;
+  box-shadow: inset -1px 1px 0 0 rgba(255, 255, 255, 0.07);
+  border-radius: 0 20px 0 0
+}
+
+.outline>span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  box-shadow: inset 1px 1px 0 0 #00d9b24d;
+  border-radius: 20px 0 0 0
+}
+
+.outline>span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 25px;
+  width: 25px;
+  box-shadow: inset -1px -1px 0 0 #00d9b233;
+  border-radius: 0 0 20px 0
+}
+
+.outline>span:nth-child(4) {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  height: calc(100% - 50px);
+  width: 1px;
+  background-image: linear-gradient(to top, #00d9b233, rgba(255, 255, 255, 0.07) 50%)
+}
+
+.outline>span:nth-child(5) {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  height: 1px;
+  width: calc(100% - 50px);
+  background-image: linear-gradient(to right, #00d9b24d, rgba(255, 255, 255, 0.07) 50%)
+}
+
+.outline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 25px;
+
+  width: 85%;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.07), #00d9b233);
+  border-radius: 0 0 20px 0
+}
+
+.outline::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 1px;
+  height: 85%;
+  background-image: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.07), #00d9b24d);
+  border-radius: 0 0 0 20px
+}
+body{
+    background-image: url('images/bgoriginal.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.bgcontainer{
+    background: rgba(0, 0, 0, 0.84);
+}
+.glowcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url(images/glow-top-left.svg) top left no-repeat, url(images/glow-bottom-right.svg) bottom right no-repeat;
+}
+.container{
+    width: 95vw;
+    margin: auto;
+}
+.center{
+    text-align: center;
+}
+.fontsmall{
+    font-size: clamp(12px, 1vw, 2vw);
+}
+.white65{
+    color: rgba(255, 255, 255, 0.65);
+}
+.font600{
+    font-weight: 600;
+}
+.font700{
+    font-weight: 700;
+}
+.flexgap{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.flexgapsmall{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* GARAGE STYLING */
+header{
+    width: 95%;
+    margin: auto;
+}
+.garage-search{
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: clamp(18px, 1vw, 40px);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+.garage-search:hover{
+    background: rgba(255, 255, 255, 0.05);
+}
+.garage-search:active{
+    background: rgba(255, 255, 255, 0.04);
+}
+.garage-search img{
+    width: clamp(1.5rem, 2rem, 3rem);
+}
+.search{
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255);
+    font-size: clamp(12px, 1vw, 30px);
+}
+.search::placeholder{
+    font-size: clamp(12px, 1vw, 2vw);
+    font-weight: 600;
+}
+.filter{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: clamp(12px, 1vw, 30px);
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 0.5rem 1rem;
+    position: relative;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+.filter:hover{
+    background: rgba(255, 255, 255, 0.22);
+}
+.filteractive{
+    background: #41CCB1;
+    color: #0B463B;
+    box-shadow: 0px 0px 20px rgba(65, 204, 177, 0.25);
+}
+.filteractive:hover{
+    background: #41CCB1;
+    color: #0B463B;
+}
+.filteractive::before{
+    background: #177261;
+    content: "";
+    display: block;
+    max-width: 100%;
+    right: 15%;
+    left: 15%;
+    height: 0.2rem;
+    position: absolute;
+    top: -0.2rem;
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: 12px 12px 0px 0px;
+}
+.filteractive::after{
+    background: #177261;
+    content: "";
+    display: block;
+    max-width: 100%;
+    right: 15%;
+    left: 15%;
+    height: 0.2rem;
+    position: absolute;
+    bottom: -0.2rem;
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: 0px 0px 12px 12px;
+}
+.garagecontainer{
+    height: 60vh;
+    overflow-y: scroll;
+    margin: 2rem auto;
+}
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: fit-content(100);
+    gap: 0.5rem;
+    position: relative;    
+    padding-right: 5px;
+}
+.cardetail{
+    position: relative;
+    padding: clamp(0.5rem, 0.7vw, 1.5rem);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: clamp(18px, 1.5vw, 40px);
+    cursor: pointer;
+}
+.carbox{
+    position: relative;
+    width: 50%;
+}
+.whitecar{
+    width: 100%;
+}
+.rectangle{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 10%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+    border-radius: clamp(8px, 0.5vw, 16px);
+    z-index: -10;
+    transform: rotate(45deg);
+}
+.star{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 1rem;
+}
+.normal{
+    background: rgba(255, 255, 255, 0.01);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+.normal:hover{
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.07);
+    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.03);
+}
+.normal:hover .rectangle{
+    background: rgba(255, 255, 255, 0.45);
+}
+.favorite{
+    background: rgba(255, 201, 62, 0.07);
+    border: 2px solid rgba(255, 201, 62, 0.1);
+}
+.favorite .rectangle{
+    background: rgba(255, 201, 62, 0.25);
+}
+.favorite:hover{
+    background: rgba(255, 201, 62, 0.12);
+    border: 2px solid rgba(255, 201, 62, 0.15);
+}
+.favorite:hover .rectangle{
+    background: rgba(255, 201, 62, 0.45);
+}
+.select{
+    background: rgba(65, 204, 177, 0.07);
+    border: 2px dashed rgba(65, 204, 177, 0.15);
+    color: rgba(65, 204, 177, 0.65);
+}
+.select .rectangle{
+    background: #41CCB1;
+}
+.select .white65{
+    color: rgba(65, 204, 177, 0.65);
+}
+.select button{
+    font-weight: 700;
+    color: #3F2610;
+    font-size: clamp(14px, 1vw, 2vw);
+    display: flex;
+    align-items: center;
+    padding: 0px 0.5vw 0px 0.2vw;
+    margin-top: 0.3rem;
+    border: none;
+    border-radius: 9999px;
+    background: rgba(255, 201, 62, 0.9);
+    cursor: pointer;
+}
+.select button img{
+    width: clamp(2rem, 2vw, 3vw);
+}
+.carname{
+    font-size: clamp(16px, 1.2vw, 2vw);
+    text-transform: capitalize;
+    line-height: 110%;
+}
+.description{
+    font-size: clamp(12px, 1vw, 2vw);
+    line-height: 110%;
+}
+.tabs{
+    position: absolute;
+    right: 5vw;
+    bottom: 5vh;
+}
+.esc{
+    padding: 0.3vw 0.5vw;
+    box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.75);
+    border-radius: clamp(8px, 0.5vw, 20px);
+    border: none;
+    font-weight: 600;
+    line-height: 100%;
+}
+@media screen and (min-width:1300px) {
+    .container{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width:1600px) {
+    .cardetail{
+        padding: 1rem;
+    }
+    .green button{
+        padding: 0 0.8rem 0 4px;
+    }
+    .container{
+        width: 75vw;
+    }
+    .garagecontainer{
+        margin: 3rem auto;
+    }
+}
+
+@media screen and (min-width:2400px) {
+    .garagecontainer{
+        margin: 2rem auto;
+    }
+    .star{
+        width: 1.2rem;
+    }
+}
+
+/* height responsiveness */
+@media screen and (min-height: 1000px){
+    .garagecontainer{
+        height: 50vh;
+    }
+}
